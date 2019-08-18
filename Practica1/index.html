@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="module" src="src/Main.js"></script>
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="navega">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav">
+                <a class="navbar-brand" href="#">PDI</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Practica 1
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#" id="btn_grayscale">Escala de grises</a>
+                                <a class="dropdown-item" href="#" id="btn_invert">Invertir colores</a>
+                                <a class="dropdown-item" href="#" id="btn_red_channel">Canal rojo</a>
+                                <a class="dropdown-item" href="#" id="btn_blue_channel">Canal azul</a>
+                                <a class="dropdown-item" href="#" id="btn_green_channel">Canal verde</a>
+                                <a class="dropdown-item" href="#" id="btn_mosaico">Mosaico</a>
+                                <a class="dropdown-item" href="#" id="btn_brillo">Brillo</a>
+                                <a class="dropdown-item" href="#" id="btn_alto_contraste">Alto contraste</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <span class="navbar-text">
+                        <a href="#" id="btn_open">&nbsp;Subir&nbsp;</a>
+                        <a href="#" id="btn_save">&nbsp;Descargar&nbsp;</a>
+                    </span>
+                </div>
+            </nav>
+        </div>
+
+        <div id="trabajo">
+
+            <div id="area">
+                <canvas id="drawing" width="0" height="0"></canvas>
+            </div>
+            <div id="tools">
+                <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-secondary" id="btn_undo">Undo</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
