@@ -14,6 +14,28 @@
 </head>
 
 <body>
+              
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Ingresa una frase</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <input type="text" name="frase" id="frase">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" id="btn_ascii6" data-dismiss="modal">Procesar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
     <div id="container">
         <div id="navega">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nav">
@@ -62,7 +84,12 @@
                                 Practica 3
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#" id="btn_prueba">Prueba</a>
+                                <a class="dropdown-item" href="#" id="btn_ascii1">Colores sin letras M</a>
+                                <a class="dropdown-item" href="#" id="btn_ascii2">Tonos de grises M</a>
+                                <a class="dropdown-item" href="#" id="btn_ascii3">MNH#QKAD042$%+.</a>
+                                <a class="dropdown-item" href="#" id="btn_ascii4">(1)+(3)</a>
+                                <a class="dropdown-item" href="#" id="btn_ascii5">(2)+(3)</a>
+                                <a class="dropdown-item" href="#" id="btn_ascii6" data-toggle="modal" data-target="#exampleModal">Colores con texto</a>
 
                             </div>
                         </li>

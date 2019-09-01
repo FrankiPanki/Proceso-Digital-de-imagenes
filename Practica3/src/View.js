@@ -1,5 +1,5 @@
 export default class View {
-  constructor() { 
+  constructor() {
   }
 
   init(controller) {
@@ -42,7 +42,7 @@ export default class View {
     document.getElementById("btn_green_channel").addEventListener("click", () => {
       this.controller.green_channel_action();
     });
-    
+
     document.getElementById("btn_blue_channel").addEventListener("click", () => {
       this.controller.blue_channel_action();
     });
@@ -79,22 +79,57 @@ export default class View {
     document.getElementById("btn_mediana").addEventListener("click", () => {
       this.controller.mediana();
     });
-    
+
     // PRACTICA3-----------------------------------------------
-    
-    document.getElementById("btn_prueba").addEventListener("click", () => {
+
+    document.getElementById("btn_ascii1").addEventListener("click", () => {
       $('#drawing').hide();
       $('#area').append("<div id='ascii' class = 'ascii'><div>");
-      this.controller.prueba();
+      this.controller.ascii1();
       $('#btn_quita').css('visibility', 'visible');
     });
+    document.getElementById("btn_ascii2").addEventListener("click", () => {
+      $('#drawing').hide();
+      $('#area').append("<div id='ascii' class = 'ascii'><div>");
+      this.controller.ascii2();
+      $('#btn_quita').css('visibility', 'visible');
+    });
+    document.getElementById("btn_ascii3").addEventListener("click", () => {
+      $('#drawing').hide();
+      $('#area').append("<div id='ascii' class = 'ascii'><div>");
+      this.controller.ascii3();
+      $('#btn_quita').css('visibility', 'visible');
+    });
+    document.getElementById("btn_ascii4").addEventListener("click", () => {
+      $('#drawing').hide();
+      $('#area').append("<div id='ascii' class = 'ascii'><div>");
+      this.controller.ascii4();
+      $('#btn_quita').css('visibility', 'visible');
+    });
+    document.getElementById("btn_ascii5").addEventListener("click", () => {
+      $('#drawing').hide();
+      $('#area').append("<div id='ascii' class = 'ascii'><div>");
+      this.controller.ascii5();
+      $('#btn_quita').css('visibility', 'visible');
+    });
+    document.getElementById("btn_ascii6").addEventListener("click", () => {
+      $('#drawing').hide();
+      $('#area').append("<div id='ascii' class = 'ascii'><div>");
+      this.controller.ascii6();
+      $('#btn_quita').css('visibility', 'visible');
+    });
+
 
     document.getElementById("btn_quita").addEventListener("click", () => {
       $('#btn_quita').css('visibility', 'hidden');;
       $("#ascii").remove();
     });
-    
+
   }
+
+
+  // OTRAS CONFIGURACIONES-----------------------------------------------
+
 
   setTitle(tit) {
     let title = document.querySelector("title");

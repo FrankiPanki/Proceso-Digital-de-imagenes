@@ -1,3 +1,7 @@
+@font-face {
+    font-family: domino;
+    src: url("./lib/domino.ttf");
+    }
 html, body{
     padding: 0%;
     margin: 0%;
@@ -78,9 +82,12 @@ canvas {
     height: 100%;
     margin: 0%;
     font-family: monospace;
-    font-size: 3px;
+    font-size: 8px;
     text-align: center;
     overflow: scroll;
+    line-height: .7em;
+    background-color: white;
+
 
 }
 

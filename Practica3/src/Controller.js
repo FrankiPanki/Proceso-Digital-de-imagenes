@@ -7,9 +7,9 @@ export default class Controller {
   init(model, view) {
     this.model = model;
     this.view = view;
-    this.practica1=new Practica1(model);
-    this.practica2=new Practica2(model);
-    this.practica3=new Practica3(model);
+    this.practica1 = new Practica1(model);
+    this.practica2 = new Practica2(model);
+    this.practica3 = new Practica3(model);
 
   }
 
@@ -20,11 +20,11 @@ export default class Controller {
 
     file_input.addEventListener("change", (evt) => {
       let file = file_input.files[0];
-      
+
       const reader = new FileReader();
       reader.addEventListener("load", (elem) => {
         let image = document.createElement("img");
-        
+
         image.addEventListener("load", () => {
           this.view.setTitle(file.name);
           this.view.showCanvas();
@@ -44,7 +44,7 @@ export default class Controller {
     let link = document.createElement("a");
     link.setAttribute("download", "image.png");
     document.body.appendChild(link);
-    
+
     link.addEventListener("click", (evt) => {
       link.href = this.model.getImage();
       document.body.removeChild(link);
@@ -88,34 +88,51 @@ export default class Controller {
 
 
 
-    // BOTONES DE LA PRACTICA 2
-    blur() {
-      this.practica2.blur();
-    }
-    motion_blur() {
-      this.practica2.motion_blur();
-    }
-    encontrar_bordes() {
-      this.practica2.encontrar_bordes();
-    }
-    sharpen() {
-      this.practica2.sharpen();
-    }
-    emboss() {
-      this.practica2.emboss();
-    }
-    promedio() {
-      this.practica2.promedio();
-    }
-    mediana() {
-      this.practica2.mediana();
-    }
+  // BOTONES DE LA PRACTICA 2
+  blur() {
+    this.practica2.blur();
+  }
+  motion_blur() {
+    this.practica2.motion_blur();
+  }
+  encontrar_bordes() {
+    this.practica2.encontrar_bordes();
+  }
+  sharpen() {
+    this.practica2.sharpen();
+  }
+  emboss() {
+    this.practica2.emboss();
+  }
+  promedio() {
+    this.practica2.promedio();
+  }
+  mediana() {
+    this.practica2.mediana();
+  }
 
 
   //BOTONES DE LA PRACTICA 3
 
-    prueba() {
-      this.practica3.prueba();
-    }
+  ascii1() {
+    this.practica3.ascii("M", true, false);
+  }
+  ascii2() {
+    this.practica1.grayscale_action();
+    this.practica3.ascii("M", true, false);
+  }
+  ascii3() {
+    this.practica3.ascii("MNH#QKAD042$%+. ", false, false);
+  }
+  ascii4() {
+    this.practica3.ascii("MNH#QKAD042$%+. ", true, false);
+  }
+  ascii5() {
+    this.practica1.grayscale_action();
+    this.practica3.ascii("MNH#QKAD042$%+. ", true, false);
+  }
+  ascii6() {
+    this.practica3.ascii($("#frase").val(), true, true);
+  }
 
 }

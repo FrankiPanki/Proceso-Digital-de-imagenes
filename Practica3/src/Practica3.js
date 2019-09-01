@@ -3,8 +3,8 @@ export default class Practica3 {
         this.modelo = modelo;
     }
 
-    prueba() {
-        let map = "@%#*+=-:.";
+    ascii(caracteres, colorB, texto ) {
+        let map = caracteres;
         let data = this.modelo.context.getImageData(0, 0, this.modelo.image.width, this.modelo.image.height);
         let thisRow;
         let out = [];
@@ -13,7 +13,7 @@ export default class Practica3 {
         
         var i,avg, color, ch;
 
-        console.log(`${data.width} ${data.height}`);
+        console.log(`${this.modelo.image.width} ${this.modelo.image.height}`);
 
         for (var y = 0; y < data.height; y++) {
             thisRow = [];
@@ -22,19 +22,24 @@ export default class Practica3 {
                 avg = (data.data[i] + data.data[i + 1] + data.data[i + 2]) / 3;
                 color = [data.data[i], data.data[i + 1], data.data[i + 2]];
 
-
-                ch = map[Math.round((avg / 255) * grays)];
+                if (texto) {
+                    ch=map[(x+(y*data.width))%map.length];
+                } else {
+                    
+                    ch = map[Math.round((avg / 255) * grays)];
+                }
                 // if(Math.round((avg/255) *grays) == 255){
                 // 	ch = ' ';
                 // }
-
-                if (!ch) {
-                    ch = map[map.length - 1];
+                if (!texto) {                    
+                    if (!ch) {
+                        ch = map[map.length - 1];
+                    }
                 }
                 if (ch == ' ') {
                     ch = '&nbsp;';
                 }
-                if (color) {
+                if (colorB) {
                     thisRow.push("<span style=\"color:rgb(" + color.join(',') + ")\">" + ch + "</span>");
                 } else {
                     thisRow.push("<span>" + ch + "</span>");
