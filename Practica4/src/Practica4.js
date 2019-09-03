@@ -60,7 +60,12 @@ export default class Practica4 {
         for (let i = margin_x; i < this.modelo.canvas.width - margin_x; i++) {
             for (let j = margin_y; j < this.modelo.canvas.height - margin_y; j++) {
                 new_color = { R: 0, G: 0, B: 0 };
-                let max=0;
+                let max;
+                if (b) {
+                    max=0;
+                } else {
+                    max=300
+                }
 
                 for (let entry = 0; entry < matrix.values.length; entry++) {
                     entry_x = (entry % matrix.size_n) - margin_x;
