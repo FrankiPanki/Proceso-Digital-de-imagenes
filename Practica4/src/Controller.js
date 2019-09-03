@@ -142,6 +142,12 @@ export default class Controller {
     marcaAgua(){
       this.practica4.marcaAgua(0.5,$("#marca").val());
     }
+    max(){
+      this.practica4.max();
+    }
+    min(){
+      this.practica4.min();
+    }
 
 
 }

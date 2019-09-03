@@ -131,6 +131,13 @@ export default class View {
       this.controller.marcaAgua();
     });
 
+    document.getElementById("btn_max").addEventListener("click", () => {
+      this.controller.max();
+    });
+    document.getElementById("btn_min").addEventListener("click", () => {
+      this.controller.min();
+    });
+
   }
 
 
