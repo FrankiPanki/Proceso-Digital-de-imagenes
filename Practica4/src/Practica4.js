@@ -9,7 +9,7 @@ export default class Practica4 {
         return { R: color_pos, G: color_pos + 1, B: color_pos + 2, A: color_pos + 3 };
     }
 
-
+    // marca
     marcaAgua(alfa, texto) {
         let new_imageData = this.modelo.context.getImageData(0, 0, this.modelo.canvas.width, this.modelo.canvas.height);
         let aux_canvas = document.getElementById("auxiliar");
