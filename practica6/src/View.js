@@ -55,6 +55,9 @@ export default class View {
     document.getElementById("btn_alto_contraste").addEventListener("click", () => {
       this.controller.alto_contraste_action();
     });
+    document.getElementById("btn_cmica").addEventListener("click", () => {
+      this.controller.cmica();
+    });
 
 
     // PRACTICA2-----------------------------------------------
@@ -138,9 +141,12 @@ export default class View {
       this.controller.min();
     });
 
-    // PRACTICA4-----------------------------------------------
+    // PRACTICA6-----------------------------------------------
     document.getElementById("btn_recursivo_gris").addEventListener("click", () => {
       this.controller.recursivo_gris();
+    });
+    document.getElementById("btn_recursivo_color").addEventListener("click", () => {
+      this.controller.recursivo_color();
     });
 
   }

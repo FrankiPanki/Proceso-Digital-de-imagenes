@@ -89,6 +89,9 @@ export default class Controller {
   alto_contraste_action() {
     this.practica1.altoContraste();
   }
+  cmica() {
+    this.practica1.cmica();
+  }
 
 
 
@@ -154,8 +157,10 @@ export default class Controller {
   //BOTONES DE LA PRACTICA 6
 
   recursivo_gris() {
-    this.practica1.grayscale_action();
-    this.practica6.recursivo_gris();
+    this.practica6.recursivo(false);
+  }
+  recursivo_color() {
+    this.practica6.recursivo(true);
   }
 
 

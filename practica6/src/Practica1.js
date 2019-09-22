@@ -193,5 +193,11 @@ export default class Practica1{
       return { R: 0, G: 0, B: B };
     });
   }
+  cmica() {
+    this.apply_function_per_pixel(function (R, G, B) {
+      return { R: R | 255, G: G | 255, B: B | 0 };
+    });
+  }
+  
 
 }

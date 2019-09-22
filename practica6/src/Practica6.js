@@ -1,9 +1,9 @@
 export default class Practica6 {
     constructor(modelo) {
         this.modelo = modelo;
-        this.tam = 10;
-        this.w = 1000;
-        this.h = 1000;
+        this.tam = 17;
+        this.w = 0;
+        this.h = 0;
         this.x = 0
         this.y = 0;
         this.m = 0;
@@ -35,56 +35,69 @@ export default class Practica6 {
         }
     }
 
-    // grayscale_action(factor) {
-    //     this.apply_function_per_pixel(function (R, G, B) {
-    //         gray = (R + G + B) / 3;
-    //         return { R: gray+factor, G: gray+factor, B: gray+factor };
-    //     });
-    // }
 
-    brillo(factor) {
+
+    gris(factor) {
+        let gray;
         this.apply_function_per_pixel(function (R, G, B) {
-            return { R: R + factor, G: G + factor, B: B + factor };
+            gray = (R + G + B) / 3;
+            return { R: gray+factor, G: gray+factor, B: gray+factor };
         });
     }
 
-    recursivo_gris() {
-        this.modelo.aux_canvas.setAttribute("width", this.w);
-        this.modelo.aux_canvas.setAttribute("height", this.h);
+    color(r,g,b){
+        this.apply_function_per_pixel(function (R, G, B) {
+            return { R: R & r, G: G & g, B: B & b };
+        });  
+    }
+
+
+
+    recursivo(color) {
+        this.w=this.modelo.canvas.width;
+        this.h=this.modelo.canvas.height;
+
         let imageData2 = this.modelo.context.getImageData(0, 0, this.modelo.canvas.width, this.modelo.canvas.height);
-        let r=0, g=0, b=0;
+        let r=0,g=0,b=0;
 
 
 
         while (this.x < this.w) {
             this.m = ((this.x + this.tam) < this.w) ? this.tam : this.w - this.x;
             while (this.y < this.h) {
+                this.n = ((this.y + this.tam) < this.h) ? this.tam : this.h - this.y;
+
                 for (let i = 0; i < this.m; i++) {
 
                     for (let j = 0; j < this.n; j++) {
                         let pixel = this.getColorIndex(i + this.x, j + this.y, this.modelo.canvas.width);
                         r += imageData2.data[pixel.R]; g += imageData2.data[pixel.G]; b += imageData2.data[pixel.B];
-                        console.log(r);
                     }
 
-                } r /= (this.m * this.n);
+                }  r /= (this.m * this.n); g /= (this.m * this.n); b /= (this.m * this.n);
 
 
                 this.minicontext.clearRect(0, 0, this.tam, this.tam);
                 this.minicontext.drawImage(this.modelo.image, 0, 0, this.tam, this.tam);
                 this.imageData = this.minicontext.getImageData(0, 0, this.minicanvas.width, this.minicanvas.height);
-                this.brillo(r);
+                
+                if (color) {
+                    this.color(r,g,b)
+                } else {
+                    
+                    this.gris(r);
+                }
 
                 this.modelo.aux_context.putImageData(this.imageData, this.x, this.y);
 
 
-                this.n = ((this.y + this.tam) < this.h) ? this.tam : this.h - this.y;
                 this.y += this.n;
 
             }
             this.x += this.m; this.y = 0;
 
         }
+
         this.modelo.putImage(this.modelo.aux_canvas);
 
     }
