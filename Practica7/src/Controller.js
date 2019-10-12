@@ -4,6 +4,7 @@ import Practica3 from "./Practica3.js";
 import Practica4 from "./Practica4.js";
 import Practica6 from "./Practica6.js";
 import Practica7 from "./Practica7.js";
+import Practica72 from "./Practica72.js";
 export default class Controller {
   constructor() { }
 
@@ -16,6 +17,7 @@ export default class Controller {
     this.practica4 = new Practica4(model);
     this.practica6 = new Practica6(model);
     this.practica7 = new Practica7(model);
+    this.practica72 = new Practica72(model);
 
   }
 
@@ -169,5 +171,8 @@ export default class Controller {
 
   ecualizacion() {
     this.practica7.ecualizacion();
+  }
+  semiTono() {
+    this.practica72.semiTono();
   }
 }

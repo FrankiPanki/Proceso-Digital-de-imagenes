@@ -36,23 +36,22 @@ export default class Practica7 {
 
     ecualizacion() {
         this.histo();
+        console.log(this.histograma);
+
         let suma=0;
         let sumah = [];
         for (let index = 0; index < 256; index++) {
             sumah[index] = 0;
         }
         let tono = 0;
-        let constante = 0;
-
+        
         for (let k = 0; k < 256; k++) {
             suma = suma + this.histograma[k]
             sumah[k] = suma;
         }
 
         
-        constante = suma / ((this.modelo.canvas.width) * (this.modelo.canvas.height));
         
-        console.log(constante);
 
         let imageData = this.modelo.context.getImageData(0, 0, this.modelo.canvas.width, this.modelo.canvas.height);
         let color_index;
@@ -60,7 +59,7 @@ export default class Practica7 {
         for (let i = 0; i < this.modelo.canvas.width; i++) {
             for (let j = 0; j < this.modelo.canvas.height; j++) {
                 color_index = this.getColorIndex(i, j, this.modelo.canvas.width);
-                tono=Math.floor(sumah[imageData.data[color_index.R]]*constante);
+                tono=Math.floor( ((sumah[imageData.data[color_index.R]]-1)/(sumah[imageData.data[255]])*255) );
                 if (tono>255) {
                     tono=255;
                 }
@@ -70,8 +69,11 @@ export default class Practica7 {
                 imageData.data[color_index.B] = tono;
             }
         }
+
         this.modelo.aux_context.putImageData(imageData, 0, 0);
         this.modelo.putImage(this.modelo.aux_canvas);
+        this.histo();
+        console.log(this.histograma);
 
 
 

@@ -104,3 +104,10 @@ canvas {
     visibility: hidden;
 
 }
+
+
+#aux{
+    visibility: hidden;
+    width: 0%;
+    height: 0%;
+}

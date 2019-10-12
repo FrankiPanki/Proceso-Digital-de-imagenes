@@ -153,6 +153,9 @@ export default class View {
     document.getElementById("btn_ecualizacion").addEventListener("click", () => {
       this.controller.ecualizacion();
     });
+    document.getElementById("btn_semiTono").addEventListener("click", () => {
+      this.controller.semiTono();
+    });
 
   }
 
