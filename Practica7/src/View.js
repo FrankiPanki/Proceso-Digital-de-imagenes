@@ -153,8 +153,14 @@ export default class View {
     document.getElementById("btn_ecualizacion").addEventListener("click", () => {
       this.controller.ecualizacion();
     });
-    document.getElementById("btn_semiTono").addEventListener("click", () => {
-      this.controller.semiTono();
+    document.getElementById("btn_semiTono1").addEventListener("click", () => {
+      this.controller.semiTono1();
+    });
+    document.getElementById("btn_semiTono2").addEventListener("click", () => {
+      this.controller.semiTono2();
+    });
+    document.getElementById("btn_semiTono3").addEventListener("click", () => {
+      this.controller.semiTono3();
     });
 
   }

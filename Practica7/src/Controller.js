@@ -15,7 +15,7 @@ export default class Controller {
     this.practica2 = new Practica2(model);
     this.practica3 = new Practica3(model);
     this.practica4 = new Practica4(model);
-    this.practica6 = new Practica6(model);
+    //this.practica6 = new Practica6(model);
     this.practica7 = new Practica7(model);
     this.practica72 = new Practica72(model);
 
@@ -161,18 +161,28 @@ export default class Controller {
   //BOTONES DE LA PRACTICA 6
 
   recursivo_gris() {
-    this.practica6.recursivo(false);
+    //this.practica6.recursivo(false);
   }
   recursivo_color() {
-    this.practica6.recursivo(true);
+    //this.practica6.recursivo(true);
   }
 
   //BOTONES DE LA PRACTICA 7
 
-  ecualizacion() {
-    this.practica7.ecualizacion();
+  async ecualizacion() {
+    await new Promise((resolve, reject)=>{
+      this.practica1.grayscale_action();
+      resolve(1);
+      this.practica7.ecualizacion();
+    });
   }
-  semiTono() {
-    this.practica72.semiTono();
+  semiTono1() {
+   this.practica72.semiTono("a");
+  }
+  semiTono2() {
+   this.practica72.semiTono("b");
+  }
+  semiTono3() {
+   this.practica72.semiTono("c");
   }
 }
