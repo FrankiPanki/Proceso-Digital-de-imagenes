@@ -1,9 +1,22 @@
 Nombre Francisco Daniel Gamez Garcia
 no cuenta 312215176
-PRACTICA2 -------------
+------------ PROYECTO FINAL -------------
 
 
-Instrucciones:
+Instrucciones del PROYECTO FINAL:
+----------------------------------------------------------------------------
+
+PONER LAS IMAGENES QUE SE QUIERAN UTILIZAR EN LA CARPETA IMGENES QUE ESTA  DE DONDE ESTA EL ARCHIVO índex.html
+
+EL ARCHIVO QUE SE PIDE AL DAR CLIC EL NOTON DE FOTOMOSAICOS ES EL DE art_explosion.txt, O bboa.txt, imagenes.txt, DEPENDIENDO DE LAS IMAGENES QUE SE ENCUENTRAN EN LA CARPETA DE IMAGENES
+
+LAS IMAGENES UTILIZADAS SON LAS QUE SE NOS PROPORCIONARON EN EL GRUPO DE WHATSAPP
+
+
+----------------------------------------------------------------------------
+
+INSTRUCCIONES PARA CORRER EL PROYECTO
+
 Por razones de los navegadores, la aplicación solo puede ser abierta mediante el uso de un servidor,
 la manera en la que estuve realizando el desarrollo es a travez del editor de texto visual studio code
 https://code.visualstudio.com/

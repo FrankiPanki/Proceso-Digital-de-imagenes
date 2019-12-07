@@ -1,7 +1,7 @@
 export default class ProyectoFinal {
     constructor(modelo) {
         this.modelo = modelo;
-        this.tam = 17;
+        this.tam = 10;
         this.w = 0;
         this.h = 0;
         this.x = 0
@@ -46,7 +46,6 @@ export default class ProyectoFinal {
 
 
     async fotomosaico(imagenes) {
-        console.log("entra fotomosaico");
         this.w = this.modelo.canvas.width;
         this.h = this.modelo.canvas.height;
 
@@ -79,7 +78,7 @@ export default class ProyectoFinal {
                 //Escoger imagen
                 let menor = 9999999;
                 let ch = "";
-                let path = ""
+                let path = "../imagenes/"
                 let distancia=0;
 
                 imagenes.map((elem) => {
